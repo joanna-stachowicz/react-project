@@ -6,8 +6,6 @@ import { settings } from '../../data/dataStore';
 import Creator from '../Creator/Creator.js';
 import Icon from '../Icon/Icon.js';
 
-
-
 class Column extends React.Component {
   state = {
     cards: this.props.cards || [],
