@@ -6,6 +6,8 @@ import { settings } from '../../data/dataStore';
 import ReactHtmlParser from 'react-html-parser';
 import Creator from '../Creator/Creator.js';
 import PropTypes from 'prop-types';
+import Container from '../Container/Container';
+
 
 class List extends React.Component {
 
@@ -38,6 +40,7 @@ class List extends React.Component {
         <div className={styles.creator}>
           <Creator text={settings.columnCreatorText} action={addColumn} />
         </div>
+        <Container />
       </section>
     );
   }
