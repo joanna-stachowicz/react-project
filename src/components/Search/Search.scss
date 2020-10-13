@@ -1,4 +1,4 @@
-@import '../../styles/settings.scss';
+@import "../../styles/settings.scss";
 
 .component {
   width: 100%;
@@ -12,5 +12,9 @@
     margin: 0 0 $base-size 0;
     font-family: $font-text;
     border-radius: $radius;
+  }
+
+  div {
+    display: inline-block;
   }
 }

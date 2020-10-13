@@ -122,6 +122,18 @@ const lists = [
     description: 'Interesting things I want to check out!',
     image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
   },
+  {
+    id: 'list-2',
+    title: 'Shopping list',
+    description: 'Interesting things I want to buy!',
+    image: 'https://i.ibb.co/MchDsKV/pexels-daria-shevtsova-880459-1.jpg',
+  },
+  {
+    id: 'list-3',
+    title: 'Meeting list',
+    description: 'People I want to meek this month!',
+    image: 'https://i.ibb.co/cvgtSnD/pexels-daria-shevtsova-3626622-1.jpg',
+  },
 ];
 
 const columns = [
@@ -185,7 +197,7 @@ const cards = [
 ];
 
 const initialStoreData = {
-  app: {...pageContents},
+  app: { ...pageContents },
   lists: [...lists],
   columns: [...columns],
   cards: [...cards],

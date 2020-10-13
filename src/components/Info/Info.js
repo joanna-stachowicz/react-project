@@ -13,7 +13,7 @@ const Info = () => (
 );
 
 Info.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   image: PropTypes.node,
   imageAlt: PropTypes.node,
 };

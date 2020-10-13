@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { settings } from '../../data/dataStore';
 import Icon from '../Icon/Icon';
 import Container from '../Container/Container';
+import { withRouter } from 'react-router';
 
 class Search extends React.Component {
   static propTypes = {
@@ -13,6 +14,7 @@ class Search extends React.Component {
     changeSearchString: PropTypes.func,
     countVisible: PropTypes.number,
     countAll: PropTypes.number,
+    history: PropTypes.node,
   }
 
   static defaultProps = {
@@ -23,30 +25,29 @@ class Search extends React.Component {
     value: this.props.searchString,
   }
 
-  handleChange(event){
+  handleChange(event) {
     this.setState({
       value: event.target.value,
       visibleButtons: event.target.value.length > 0,
     });
   }
 
-  handleOK(){
-    this.props.changeSearchString(this.state.value);
-    console.log(this.state.value);
+  handleOK() {
+    this.props.history.push(`/search/${this.state.value}`);
   }
 
-  componentDidUpdate(prevProps){
-    if(this.props.searchString != prevProps.searchString){
-      this.setState({value: this.props.searchString});
+  componentDidUpdate(prevProps) {
+    if (this.props.searchString != prevProps.searchString) {
+      this.setState({ value: this.props.searchString });
     }
   }
 
   render() {
-    const {text, countVisible, countAll} = this.props;
-    const {value} = this.state;
-    const {icon} = settings.search;
+    const { text, countVisible, countAll } = this.props;
+    const { value } = this.state;
+    const { icon } = settings.search;
     return (
-      
+
       <div className={styles.component}>
         <Container>
           <input
@@ -59,7 +60,7 @@ class Search extends React.Component {
             <Button onClick={() => this.handleOK()}><Icon name={icon} /></Button>
           </div>
           <div>
-            { countVisible == countAll ? '' : `${countVisible} / ${countAll}` }
+            {countVisible == countAll ? '' : `${countVisible} / ${countAll}`}
           </div>
         </Container>
       </div>
@@ -67,4 +68,4 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+export default withRouter(Search);
