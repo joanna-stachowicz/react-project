@@ -5,9 +5,9 @@ import { getCardsForSearchResults, getListForCards } from '../../redux/cardsRedu
 const mapStateToProps = (state, props) => {
   const text = props.match.params.text;
   const cards = getCardsForSearchResults(state, text);
-  const cards2 = getListForCards(state, cards);
+  const cardsWithListId = getListForCards(state, cards);
   return {
-    cards: cards2,
+    cards: cardsWithListId,
   };
 };
 

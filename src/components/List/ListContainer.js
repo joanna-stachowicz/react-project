@@ -13,7 +13,7 @@ const mapStateToProps = (state, props) => {
   };
 };
 
-const mapDispatchToProps = (dispatch, props) => ({
+const mapDispatchToProps = (dispatch, props) => ({     //dodaje propsy do List; w któych są funkcje (addColumn), które wysyłają akcje do magazynu
   addColumn: title => dispatch(createActionAddColumn({
     listId: props.match.params.id,
     title,
